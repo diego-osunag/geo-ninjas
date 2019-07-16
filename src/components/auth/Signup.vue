@@ -14,7 +14,7 @@
                 <label for="alias">Alias:</label>
                 <input type="text" name="alias" v-model="alias">
             </div>
-            <p class="field center" v-if="feedback">{{ feedback }}</p>
+            <p class="field center red-text" v-if="feedback">{{ feedback }}</p>
             <div class="field center">
                 <button class="btn deep-purple">Signup</button>
             </div>
@@ -25,6 +25,7 @@
 <script>
 import slugify from 'slugify'
 import db from '@/firebase/init.js'
+import firebase from 'firebase'
 
 export default {
     data(){
@@ -38,11 +39,35 @@ export default {
     },
     methods: {
         signup(){
-            if(this.alias){
+            if(this.alias && this.email && this.password){
                  this.slug = slugify(this.alias, {
                      replacement: '-',
                      remove: /[$*_+~.()'"!\-:@]/g,
                      lower: true
+                 })
+                 let ref = db.collection('users').doc(this.slug);
+                 ref.get().then(doc => {
+                   if(doc.exists){
+                     this.feedback = 'This alias already exists'
+                   } else {
+                     firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                     .then(cred => {
+                       console.log(this.email + " " + this.password)
+                       console.log("user: " + cred.user)
+                       ref.set({ 
+                        alias: this.alias,
+                        geolocation: null,
+                        user_id: cred.user.uid
+                       })
+                     }).then(() => {
+                       this.$router.push({ name: 'GMap' })
+                     })
+                     .catch(err => {
+                       console.log(err)
+                       this.feedback = err.message
+                     })
+                     this.feedback = 'This alias is free to use'
+                   }
                  })
                  console.log(this.slug);
             }else{
