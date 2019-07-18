@@ -1,0 +1,36 @@
+[33mcommit 8b1728107b47a0313752a5fa4bf1770703c48ff5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: f401d9f b232ec9
+Author: diego-osunag <diego.osunag@hotmail.com>
+Date:   Mon Jul 15 00:39:40 2019 -0600
+
+    Merge branch 'master' of https://github.com/diego-osunag/geo-ninjas
+
+[33mcommit f401d9feef88997b43752e046d409f4e28c20fea[m
+Author: diego-osunag <diego.osunag@hotmail.com>
+Date:   Mon Jul 15 00:34:33 2019 -0600
+
+    Installed slugify
+
+[33mcommit b232ec9c3b8518107a9dd3a12d7deb4ed4a7423e[m
+Author: Diego Osuna <31935487+diego-osunag@users.noreply.github.com>
+Date:   Sun Jul 14 12:00:25 2019 -0600
+
+    removed Google Maps API
+
+[33mcommit 0068add85cbb1a04a9a90b701ad9c03a4b296bb3[m
+Author: diego-osunag <diego.osunag@hotmail.com>
+Date:   Sun Jul 14 11:32:19 2019 -0600
+
+    Imported firebase, materializeCSS, Google Maps API, created GMap page
+
+[33mcommit 1bffa90f935be9ddc70431caeaf892d2bf51efee[m
+Author: diego-osunag <diego.osunag@hotmail.com>
+Date:   Sat Jul 13 13:53:05 2019 -0600
+
+    Edited README.md
+
+[33mcommit 336acd0475fd247c2d437b9e8a66ceaf40615cc0[m
+Author: diego-osunag <diosuna@redelcid.com>
+Date:   Sat Jul 13 13:47:33 2019 -0600
+
+    New project created
